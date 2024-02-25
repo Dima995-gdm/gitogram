@@ -1,0 +1,39 @@
+.feed {
+
+    &__user {
+        margin-bottom: 16px;
+    }
+
+    &__content {
+        margin-bottom: 18px;
+    }
+
+    &__comments {
+        margin-top: 10px;
+        display: none;
+    }
+
+    &__comments._active {
+        display: block;
+    }
+
+    &__comments-list {
+        list-style-type: none;
+    }
+
+    &__comment {
+        margin-bottom: 6px;
+    }
+
+    &__comment:last-child {
+        margin-bottom: 0;
+    }
+
+    &__date {
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(0, 0, 0, 0.4);
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,15 @@
+.comment {
+    display: flex;
+    gap: 8px;
+
+    &__author {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 700;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

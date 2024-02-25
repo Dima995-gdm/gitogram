@@ -1,0 +1,23 @@
+.toggler {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &__text {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        transition: transform 0.2s ease;
+    }
+}
+
+.toggler._active .toggler__icon {
+    transform: rotate(-180deg);
+}
