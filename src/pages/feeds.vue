@@ -22,15 +22,24 @@
       <div class="container">
         <div class="feeds__wrap">
           <ul class="feeds__list">
-            <li class="feeds__item">
-              <feed>
+            <li class="feeds__item" v-for="item in items" :key="item.id">
+              <feed
+              :username="item.owner.login"
+              :userAvatar="item.owner.avatar_url"
+              >
                 <template #feed_content>
-                  <repository/>
+                  <repository
+                  :title="item.name"
+                  :description="item.description"
+                  :stars="item.stargazers_count"
+                  :forks="item.forks_count"
+                  />
                 </template>
               </feed>
             </li>
           </ul>
         </div>
+        <slide />
       </div>
     </section>
   </main>
@@ -42,6 +51,9 @@ import feed from '@/components/feed'
 import repository from '@/components/repository'
 import logo from '@/components/logo'
 import panel from '@/components/panel'
+import slide from '@/components/slide'
+
+import * as api from '@/api'
 
 export default {
   name: 'feeds',
@@ -50,7 +62,21 @@ export default {
     feed,
     repository,
     logo,
-    panel
+    panel,
+    slide
+  },
+  data () {
+    return {
+      items: []
+    }
+  },
+  async created () {
+    try {
+      const { data } = await api.trendings.getTrendings()
+      this.items = data.items
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 </script>

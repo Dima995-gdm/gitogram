@@ -4,4 +4,12 @@
     &__list {
         list-style-type: none;
     }
+
+    &__item {
+        margin-bottom: 24px;
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
 }

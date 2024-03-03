@@ -7,7 +7,7 @@
           </div>
           <div class="social__name">Star</div>
         </button>
-        <div class="social__counter">156k</div>
+        <div class="social__counter">{{ stars }}</div>
     </div>
     <div class="social__item">
       <button class="social__btn">
@@ -16,7 +16,7 @@
           </div>
           <div class="social__name">Fork</div>
         </button>
-        <div class="social__counter">16</div>
+        <div class="social__counter">{{ forks }}</div>
     </div>
   </div>
 </template>
@@ -28,6 +28,16 @@ export default {
   name: 'social',
   components: {
     icon
+  },
+  props: {
+    stars: {
+      type: Number,
+      required: true
+    },
+    forks: {
+      type: Number,
+      required: true
+    }
   }
 }
 </script>

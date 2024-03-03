@@ -1,0 +1,43 @@
+.slide {
+    display: inline-block;
+    width: 375px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.07);
+
+    &__header {
+        padding: 8px;
+        border-bottom: 1px solid #cacaca;
+    }
+
+    &__progressbar {
+        margin-bottom: 12px;
+    }
+
+    &__content {
+        padding: 18px 27px 18px 18px;
+        max-height: 500px;
+        overflow: auto;
+        border-bottom: 1px solid #cacaca;
+    }
+
+    &__content-img {
+        margin: 0 auto 24px auto;
+    }
+
+    &__content-text p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        color: #404040;
+        margin-bottom: 14px;
+    }
+
+    &__content-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    &__footer {
+        padding: 24px 52px;
+    }
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="feed">
     <div class="feed__user">
-      <user name="joshua_l" :avatar="require('@/assets/img/user-2.png')" />
+      <user :name="username" :avatar="userAvatar" />
     </div>
     <div class="feed__content">
       <slot name="feed_content"/>
@@ -29,6 +29,16 @@ export default {
     user,
     toggler,
     comment
+  },
+  props: {
+    username: {
+      type: String,
+      required: true
+    },
+    userAvatar: {
+      type: String,
+      required: true
+    }
   },
   data () {
     return {

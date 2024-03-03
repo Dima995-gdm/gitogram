@@ -1,10 +1,12 @@
 <template>
   <div class="repository">
-    <div class="repository__name">Vue.js</div>
-    <p class="repository__description">
-      JavaScript framework for building interactive web applications ⚡
+    <div class="repository__name">{{ title }}</div>
+    <p class="repository__description" v-if="description">
+      {{ description }}
     </p>
-    <social/>
+    <div class="repository__social">
+      <social :stars="stars" :forks="forks"/>
+    </div>
   </div>
 </template>
 
@@ -15,6 +17,24 @@ export default {
   name: 'repository',
   components: {
     social
+  },
+  props: {
+    title: {
+      type: String,
+      required: true
+    },
+    description: {
+      type: String,
+      required: true
+    },
+    stars: {
+      type: Number,
+      required: true
+    },
+    forks: {
+      type: Number,
+      required: true
+    }
   }
 }
 </script>
